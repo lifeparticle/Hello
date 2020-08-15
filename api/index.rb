@@ -5,7 +5,7 @@ require 'json'
 Handler = Proc.new do |req, res|
 
 	puts "#{req.inspect}"
-	puts "#{================}"
+	puts "================"
 	puts "#{req.raw_header['X-Forwarded-For']}"
 	#puts "#{req.env['HTTP_X_FORWARDED_FOR']}"
 	# svg = Victor::SVG.new width: 250, height: 30, style: { background: '#ddd' }
