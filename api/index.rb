@@ -1,7 +1,7 @@
 require 'victor'
 require 'net/http'
 require 'json'
-require_relative 'hello_db.rb'
+require './hello_db.rb'
 
 Handler = Proc.new do |req, res|
 
