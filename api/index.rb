@@ -6,7 +6,7 @@ require_relative 'hello_db.rb'
 Handler = Proc.new do |req, res|
 
 	svg = Victor::SVG.new width: 500, height: 20, style: { background: '#ffffff00' }
-	ip_address = req.header["x-vercel-forwarded-for"].first
+	ip_address = req.header["x-forwarded-for"].first
 	hello = ""
 	ACCESS_KEY = ENV['ACCESS_KEY']
 
