@@ -29,7 +29,7 @@ Handler = Proc.new do |req, res|
 
 		svg.build do
 			g font_size: 16, font_family: 'arial', fill: 'black' do
-				text hello, x: 20, y: 20
+				text hello.encode!('UTF-8'), x: 20, y: 20
 			end
 		end
 
