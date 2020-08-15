@@ -8,12 +8,13 @@ Handler = Proc.new do |req, res|
 	svg = Victor::SVG.new width: 500, height: 20, style: { background: '#ffffff00' }
 	ip_address = req.header["x-vercel-forwarded-for"].first
 	hello = ""
+	ACCESS_KEY = ENV['ACCESS_KEY']
 
 	if ip_address
 		BASE_URL = "http://api.ipstack.com/"
 
 		begin
-			params = "#{ip_address}?access_key=b2954457b41cfeb2cae038f4e321d694&fields=country_code"
+			params = "#{ip_address}?access_key=#{ACCESS_KEY}&fields=country_code"
 			url = URI.parse(URI.escape(("#{BASE_URL}#{params}")))
 			result = Net::HTTP.get_response(url)
 			if result.is_a?(Net::HTTPSuccess)
