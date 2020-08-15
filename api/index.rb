@@ -1,15 +1,11 @@
 require 'victor'
 require 'net/http'
 require 'json'
+require 'hello_db.rb'
 
 Handler = Proc.new do |req, res|
 
-	# puts "#{req.header}"
-	# puts "================"
-	# puts "#{req.header["x-vercel-forwarded-for"].first}"
-	# puts "================"
-	# puts "#{req.env['HTTP_X_FORWARDED_FOR']}"
-	svg = Victor::SVG.new width: 250, height: 30, style: { background: '#ddd' }
+	svg = Victor::SVG.new width: 250, height: 30, style: { background: '#ffffff00' }
 	ip_address = req.header["x-vercel-forwarded-for"].first
 	hello = ""
 
@@ -23,7 +19,7 @@ Handler = Proc.new do |req, res|
 			result = Net::HTTP.get_response(url)
 			if result.is_a?(Net::HTTPSuccess)
 				parsed = JSON.parse(result.body)
-				hello = parsed["country_code"]
+				hello = "#{lookup_table[parsed["country_code"]][1]} (#{lookup_table[parsed["country_code"]][0]})"
 			else
 				gist_count = "#{result}"
 				break
