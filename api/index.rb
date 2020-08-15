@@ -1,7 +1,7 @@
 require 'victor'
 require 'net/http'
 require 'json'
-require 'hello_db.rb'
+require_relative 'hello_db.rb'
 
 Handler = Proc.new do |req, res|
 
@@ -19,7 +19,7 @@ Handler = Proc.new do |req, res|
 			result = Net::HTTP.get_response(url)
 			if result.is_a?(Net::HTTPSuccess)
 				parsed = JSON.parse(result.body)
-				hello = "#{lookup_table[parsed["country_code"]][1]} (#{lookup_table[parsed["country_code"]][0]})"
+				hello = "#{LOOKUP_TABLE[parsed["country_code"]][1]} (#{lookup_table[parsed["country_code"]][0]})"
 			else
 				gist_count = "#{result}"
 				break

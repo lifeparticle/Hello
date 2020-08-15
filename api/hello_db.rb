@@ -1,4 +1,4 @@
-lookup_table = {
+LOOKUP_TABLE = {
     'A1': { 'Anonymous Proxy', 'Hello' },
     'A2': { 'Satellite Provider', 'Hello' },
     'AD': { 'Andorra', 'Hola' },
