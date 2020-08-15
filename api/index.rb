@@ -4,9 +4,10 @@ require 'json'
 
 Handler = Proc.new do |req, res|
 
-	# puts "#{req.inspect}"
-	# puts "================"
+	puts "#{req.header}"
+	puts "================"
 	puts "#{req.header["x-vercel-forwarded-for"].first}"
+	puts "================"
 	#puts "#{req.env['HTTP_X_FORWARDED_FOR']}"
 	# svg = Victor::SVG.new width: 250, height: 30, style: { background: '#ddd' }
 	# if req.query.has_key?("username")
