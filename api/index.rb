@@ -29,6 +29,8 @@ Handler = Proc.new do |req, res|
 			puts "#{"something bad happened"} #{e}"
 		end
 
+		puts ">>>>>> #{hello}"
+
 		svg.build do
 			g font_size: 16, font_family: 'arial', fill: 'black' do
 				text hello, x: 20, y: 20
