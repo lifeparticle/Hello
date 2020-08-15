@@ -4,7 +4,7 @@ require 'json'
 
 Handler = Proc.new do |req, res|
 
-	puts "#{req.x_forwarded_for}"
+	puts "#{req.headers}"
 	# svg = Victor::SVG.new width: 250, height: 30, style: { background: '#ddd' }
 	# if req.query.has_key?("username")
 	# 	username = req.query["username"]
