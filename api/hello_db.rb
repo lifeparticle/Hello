@@ -238,5 +238,5 @@ LOOKUP_TABLE = {
     'ZA' => [ 'South Africa', 'Hello' ],
     'ZM' => [ 'Zambia', 'Hello' ],
     'ZW' => [ 'Zimbabwe', 'Hello' ],
-    'RD' => [ 'Reserved', 'Hello') ]
+    'RD' => [ 'Reserved', 'Hello' ]
 }
