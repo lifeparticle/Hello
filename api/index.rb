@@ -29,12 +29,12 @@ Handler = Proc.new do |req, res|
 
 		svg.build do
 			g font_size: 16, font_family: 'arial', fill: 'black' do
-				text hello.to_s.encode('UTF-8', invalid: :replace, undef: :replace, replace: '?'), x: 20, y: 20
+				text hello, x: 20, y: 20
 			end
 		end
 
 		res.status = 200
-		res['Content-Type'] = 'image/svg+xml'
+		res['Content-Type'] = 'image/svg+xml; charset=utf-8'
 		res.body = svg.render
 	else
 
@@ -45,7 +45,7 @@ Handler = Proc.new do |req, res|
 		end
 
 		res.status = 404
-		res['Content-Type'] = 'image/svg+xml'
+		res['Content-Type'] = 'image/svg+xml; charset=utf-8'
 		res.body = svg.render
 	end
 end
