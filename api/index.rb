@@ -5,12 +5,11 @@ require_relative 'hello_db.rb'
 
 Handler = Proc.new do |req, res|
 
-	svg = Victor::SVG.new width: 250, height: 30, style: { background: '#ffffff00' }
+	svg = Victor::SVG.new width: 500, height: 30, style: { background: '#ffffff00' }
 	ip_address = req.header["x-vercel-forwarded-for"].first
 	hello = ""
 
 	if ip_address
-
 		BASE_URL = "http://api.ipstack.com/"
 
 		begin
@@ -19,17 +18,13 @@ Handler = Proc.new do |req, res|
 			result = Net::HTTP.get_response(url)
 			if result.is_a?(Net::HTTPSuccess)
 				parsed = JSON.parse(result.body)
-				hello = "#{LOOKUP_TABLE[parsed["country_code"]][1]} (#{LOOKUP_TABLE[parsed["country_code"]][0]})"
+				hello = "#{LOOKUP_TABLE[parsed["country_code"]][1]}"
 			else
-				gist_count = "#{result}"
-				break
+				hello = "#{result}"
 			end
-
 		rescue Exception => e
 			puts "#{"something bad happened"} #{e}"
 		end
-
-		puts ">>>>>> #{hello}"
 
 		svg.build do
 			g font_size: 16, font_family: 'arial', fill: 'black' do
