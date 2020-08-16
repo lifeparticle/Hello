@@ -38,6 +38,7 @@ Handler = Proc.new do |req, res|
 
 		res.status = 200
 		res['Content-Type'] = 'image/svg+xml; charset=utf-8'
+		res['Referrer-Policy'] = 'origin-when-cross-origin'
 		res.body = svg.render
 	else
 
