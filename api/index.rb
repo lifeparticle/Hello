@@ -27,6 +27,7 @@ Handler = Proc.new do |req, res|
 			puts "#{"something bad happened"} #{e}"
 		end
 
+		puts "#{req.header}"
 		puts "#{parsed["country_code"]} ------- #{ip_address}"
 
 		svg.build do
