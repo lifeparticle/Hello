@@ -27,9 +27,6 @@ Handler = Proc.new do |req, res|
 			puts "#{"something bad happened"} #{e}"
 		end
 
-		puts "#{req.header}"
-		puts "#{parsed["country_code"]} ------- #{ip_address}"
-
 		svg.build do
 			g font_size: 16, font_family: 'arial', fill: 'black' do
 				text hello, x: 20, y: 20
@@ -38,7 +35,6 @@ Handler = Proc.new do |req, res|
 
 		res.status = 200
 		res['Content-Type'] = 'image/svg+xml; charset=utf-8'
-		res['Referrer-Policy'] = 'origin-when-cross-origin'
 		res.body = svg.render
 	else
 
