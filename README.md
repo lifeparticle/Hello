@@ -7,6 +7,6 @@ Hello in different languages
 ```
 
 
-1. https://vercel.com/docs/edge-network/headers#inlinecode
-2. https://ipstack.com/
-3. https://github.com/stathisg/hello-in-all-languages
+1. [vercel](https://vercel.com/docs/edge-network/headers#inlinecode)
+2. [ipstack](https://ipstack.com/)
+3. [hello-in-all-languages](https://github.com/stathisg/hello-in-all-languages)
