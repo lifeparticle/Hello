@@ -1,7 +1,3 @@
-# Hello
-Hello in different languages
-
-
 ```
 # puts "#{req.header}"
 ```
