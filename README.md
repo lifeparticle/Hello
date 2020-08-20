@@ -1,3 +1,7 @@
+<p align="center">
+<a href="https://github.com/lifeparticle/Hello/issues"><img alt="contributions welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"/></a>
+</p>
+
 ```
 # puts "#{req.header}"
 ```
